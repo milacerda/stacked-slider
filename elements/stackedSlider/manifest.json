@@ -1,0 +1,22 @@
+{
+  "elements": {
+    "stackedSlider": {
+      "settings": {
+        "name": "Stacked Slider",
+        "metaThumbnailUrl": "[publicPath]/stacked-slider-thumbnail.png",
+        "metaPreviewUrl": "[publicPath]/stacked-slider-preview.png",
+        "metaDescription": "A slider with a stacked effect."
+      },
+      "phpFiles": [
+        "StackedSliderController.php"
+      ]
+    }
+  },
+  "categories": {
+    "WordPress": {
+      "elements": [
+        "stackedSlider"
+      ]
+    }
+  }
+}

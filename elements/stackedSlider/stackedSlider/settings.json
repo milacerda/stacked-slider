@@ -1,0 +1,288 @@
+{
+  "image": {
+    "type": "attachimage",
+    "access": "public",
+    "value": [
+      "image-1.jpg",
+      "image-2.jpg",
+      "image-3.jpg"
+    ],
+    "options": {
+      "label": "Images",
+      "multiple": true,
+      "onChange": {
+        "rules": {
+          "sourceType": {
+            "rule": "value",
+            "options": {
+              "value": "images"
+            }
+          }
+        },
+        "actions": [
+          {
+            "action": "toggleVisibility"
+          }
+        ]
+      },
+      "url": true,
+      "imageFilter": false
+    }
+  },
+  "designOptions": {
+    "type": "designOptions",
+    "access": "public",
+    "value": {},
+    "options": {
+      "label": "Design Options"
+    }
+  },
+  "editFormTab1": {
+    "type": "group",
+    "access": "protected",
+    "value": [
+      "sourceType",
+      "image",
+      "clickableOptions",
+      "showCaption",
+      "slides",
+      "metaCustomId",
+      "customClass",
+      "arrowColor",
+      "arrowColorHover",
+      "imageOverlay",
+      "imageOverlayHover"
+    ],
+    "options": {
+      "label": "General"
+    }
+  },
+  "metaEditFormTabs": {
+    "type": "group",
+    "access": "protected",
+    "value": [
+      "editFormTab1",
+      "designOptions"
+    ]
+  },
+  "relatedTo": {
+    "type": "group",
+    "access": "protected",
+    "value": [
+      "General"
+    ]
+  },
+  "customClass": {
+    "type": "string",
+    "access": "public",
+    "value": "",
+    "options": {
+      "label": "Extra class name",
+      "description": "Add an extra class name to the element and refer to it from Custom CSS option."
+    }
+  },
+  "clickableOptions": {
+    "type": "dropdown",
+    "access": "public",
+    "value": "lightbox",
+    "options": {
+      "label": "OnClick action",
+      "values": [
+        {
+          "label": "None",
+          "value": ""
+        },
+        {
+          "label": "Lightbox",
+          "value": "lightbox"
+        },
+        {
+          "label": "PhotoSwipe",
+          "value": "photoswipe"
+        },
+        {
+          "label": "Open Image in New Tab",
+          "value": "imageNewTab"
+        },
+        {
+          "label": "Link selector",
+          "value": "url"
+        }
+      ],
+      "onChange": {
+        "rules": {
+          "sourceType": {
+            "rule": "value",
+            "options": {
+              "value": "images"
+            }
+          }
+        },
+        "actions": [
+          {
+            "action": "toggleVisibility"
+          }
+        ]
+      }
+    }
+  },
+  "showCaption": {
+    "type": "toggle",
+    "access": "public",
+    "value": false,
+    "options": {
+      "label": "Show image caption in gallery view",
+      "onChange": {
+        "rules": {
+          "clickableOptions": {
+            "rule": "value",
+            "options": {
+              "value": "photoswipe"
+            }
+          }
+        },
+        "actions": [
+          {
+            "action": "toggleVisibility"
+          }
+        ]
+      }
+    }
+  },
+  "slides": {
+    "type": "number",
+    "access": "public",
+    "value": "3",
+    "options": {
+      "label": "Number of slides",
+      "min": 3,
+      "cssMixin": {
+        "mixin": "imageGalleryColumns",
+        "property": "columns",
+        "namePattern": "[\\da-f]+"
+      }
+    }
+  },
+  "metaCustomId": {
+    "type": "customId",
+    "access": "public",
+    "value": "",
+    "options": {
+      "label": "Element ID",
+      "description": "Apply unique ID to element to link directly to it by using #your_id (for element ID use lowercase input only)."
+    }
+  },
+  "tag": {
+    "access": "protected",
+    "type": "string",
+    "value": "stackedSlider"
+  },
+  "sourceType": {
+    "type": "dropdown",
+    "access": "public",
+    "value": "images",
+    "options": {
+      "label": "Post Type",
+      "global": "vcvWpStackedSlider",
+      "defaultValue": "images"
+    }
+  },
+  "arrowColor": {
+    "type": "color",
+    "access": "public",
+    "value": "#000000",
+    "options": {
+      "label": "Arrow color",
+      "cssMixin": {
+        "mixin": "arrowColor",
+        "property": "color",
+        "namePattern": "[\\da-f]+"
+      }
+    }
+  },
+  "arrowColorHover": {
+    "type": "color",
+    "access": "public",
+    "value": "#000000",
+    "options": {
+      "label": "Arrow hover color",
+      "cssMixin": {
+        "mixin": "arrowColorHover",
+        "property": "color",
+        "namePattern": "[\\da-f]+"
+      }
+    }
+  },
+  "imageOverlay": {
+    "type": "color",
+    "access": "public",
+    "value": "",
+    "options": {
+      "label": "Image overlay",
+      "cssMixin": {
+        "mixin": "imageOverlay",
+        "property": "color",
+        "namePattern": "[\\da-f]+"
+      }
+    }
+  },
+  "imageOverlayHover": {
+    "type": "color",
+    "access": "public",
+    "value": "",
+    "options": {
+      "label": "Image overlay hover",
+      "defaultValue": "unset",
+      "cssMixin": {
+        "mixin": "imageOverlayHover",
+        "property": "color",
+        "namePattern": "[\\da-f]+"
+      }
+    }
+  },
+  "metaPublicJs": {
+    "access": "protected",
+    "type": "string",
+    "value": {
+      "libraries": [
+        {
+          "rules": {
+            "clickableOptions": {
+              "rule": "value",
+              "options": {
+                "value": "lightbox"
+              }
+            }
+          },
+          "libPaths": "public/dist/lightbox.min.js"
+        },
+        {
+          "rules": {
+            "clickableOptions": {
+              "rule": "value",
+              "options": {
+                "value": "photoswipe"
+              }
+            }
+          },
+          "libPaths": [
+            "public/dist/photoswipe.min.js",
+            "public/dist/photoswipe-ui-default.min.js",
+            "public/dist/photoswipe-init.min.js"
+          ]
+        },
+        {
+          "rules": {
+            "clickableOptions": {
+              "rule": "value",
+              "options": {
+                "value": "lightbox"
+              }
+            }
+          },
+          "libPaths": "public/dist/stackedSlider.min.js"
+        }
+      ]
+    }
+  }
+}

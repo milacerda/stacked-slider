@@ -1,0 +1,9 @@
+.vce-stacked-slider-img {  
+    &--overlay-hover-$selector::before {
+        @if $color != false {
+            box-shadow: inset 0 0 0 2000px $(color) !important;
+        } else {
+            box-shadow: unset;
+        }
+    }
+}
